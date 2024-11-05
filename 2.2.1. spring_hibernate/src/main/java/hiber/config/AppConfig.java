@@ -19,7 +19,7 @@ import java.util.Properties;
 @Configuration
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
-@ComponentScan(value = "hiber")
+@ComponentScan(basePackages = "hiber.*")
 public class AppConfig {
 
    @Autowired
@@ -38,6 +38,7 @@ public class AppConfig {
    @Bean
    public LocalSessionFactoryBean getSessionFactory() {
       LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
+      factoryBean.setPackagesToScan("hiber.model");
       factoryBean.setDataSource(getDataSource());
       
       Properties props=new Properties();
