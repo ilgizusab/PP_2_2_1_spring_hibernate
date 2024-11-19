@@ -6,6 +6,7 @@ import hiber.model.User;
 import hiber.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -49,8 +50,6 @@ public class MainApp {
       System.out.println(userService.getUserByCar("Honda", 546));
       System.out.println(userService.getUserByCar("Ford", 456));
       System.out.println(userService.getUserByCar("Audi", 775));
-
-
 
       context.close();
    }
